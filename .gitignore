@@ -1,2 +1,20 @@
-venv
-instance
+# Local database and sessions: user emails and Google tokens end up here
+instance/
+*.db
+*.sqlite3
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Environments and tool caches
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.ruff_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+dist/

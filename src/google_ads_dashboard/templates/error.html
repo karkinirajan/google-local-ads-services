@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+<div class="alert alert-danger" role="alert">
+  <h2 class="h5">{{ title }} ({{ code }})</h2>
+  <p class="mb-0">{{ message }}</p>
+</div>
+<a href="{{ url_for('views.index') }}">Back to the dashboard</a>
+{% endblock %}

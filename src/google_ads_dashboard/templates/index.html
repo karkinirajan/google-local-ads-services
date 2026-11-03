@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+{% if rows is none %}
+<p class="lead">Sign in with your Google account to link your Google Ads accounts and see their campaigns.</p>
+{% else %}
+<table class="table table-striped">
+  <thead>
+    <tr><th>Name</th><th>Email</th><th>Customer IDs</th><th></th></tr>
+  </thead>
+  <tbody>
+    {% for row in rows %}
+    <tr>
+      <td>{{ row.name }}</td>
+      <td>{{ row.email }}</td>
+      <td>{{ row.customer_ids }}</td>
+      <td><a class="btn btn-primary btn-sm" href="{{ url_for('views.ads_data', user_id=row.id) }}">View ads data</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+{% endblock %}
